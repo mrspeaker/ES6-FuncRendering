@@ -5,7 +5,7 @@ define("grid",
 
     function* range(from, to) {
     	var i = from;
-    	while (i < to) {
+    	while (i < to) { // doens't need to terminate: infinite streams
     		yield i++;
     	}
     };

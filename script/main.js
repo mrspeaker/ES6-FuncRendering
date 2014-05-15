@@ -6,6 +6,8 @@ define("main",
     var r = __dependency1__.renderer;
     var shader = __dependency2__;
 
+    var curShader = shader.glsl;
+
     var main = function(el)  {
 
     	r.dom = el;
@@ -13,7 +15,7 @@ define("main",
 
     	var frame = 0;
     	(function run () {
-    		r.update(shader.glsl, frame++);
+    		r.update(curShader, frame++);
     		requestAnimationFrame(run);
     	}());
 

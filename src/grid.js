@@ -1,7 +1,7 @@
 
 function* range(from, to) {
 	let i = from;
-	while (i < to) {
+	while (i < to) { // doens't need to terminate: infinite streams
 		yield i++;
 	}
 };

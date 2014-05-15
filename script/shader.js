@@ -26,6 +26,14 @@ define("shader",
     	return [s, s, s * 0.2];
     }
 
+    var sindot = function(t)  {var xr = t.xr, yr = t.yr, t = t.t;
+
+    	var s = (Math.sin(t / 100) + xr * yr);
+
+    	return [s, s, s];
+    }
+
     __exports__.glsl = glsl;
     __exports__.circle = circle;
+    __exports__.sindot = sindot;
   });

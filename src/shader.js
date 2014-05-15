@@ -22,4 +22,11 @@ let circle = ({xr, yr, t}) => {
 	return [s, s, s * 0.2];
 }
 
-export { glsl, circle };
+let sindot = ({xr, yr, t}) => {
+
+	let s = (Math.sin(t / 100) + xr * yr);
+
+	return [s, s, s];
+}
+
+export { glsl, circle, sindot };

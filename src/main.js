@@ -2,6 +2,8 @@
 import { renderer as r } from "renderer";
 module shader from "shader";
 
+const curShader = shader.glsl;
+
 export let main = (el) => {
 
 	r.dom = el;
@@ -9,7 +11,7 @@ export let main = (el) => {
 
 	let frame = 0;
 	(function run () {
-		r.update(shader.glsl, frame++);
+		r.update(curShader, frame++);
 		requestAnimationFrame(run);
 	}());
 
