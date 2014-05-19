@@ -1,7 +1,7 @@
 /* global require */
 "use strict";
 
-var stage = 2;
+var stage = 1;
 
 var gulp = require("gulp"),
 	gutil = require("gulp-util"),
