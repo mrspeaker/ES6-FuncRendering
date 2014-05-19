@@ -1,13 +1,4 @@
-function range(from, to) {
 
-}
-
-function matrix(w, h) {
-
-}
-
-
-/*
 function* range(from, to) {
 	let i = from;
 	while (i < to) { // doens't need to terminate: infinite streams
@@ -23,7 +14,7 @@ function* matrix(w, h) {
 		}
 	}
 }
+
 //let matrix = (w, h) => (for (y of range(0, h)) for (x of range(0, w)) {x: x, y: y});
 
 export { matrix };
-*/

@@ -18,6 +18,7 @@ define("grid",
     		};$D$4 = $D$5 = $D$6 = $D$7 = void 0;
     	};$D$0 = $D$1 = $D$2 = $D$3 = void 0;
     }
+
     //let matrix = (w, h) => (for (y of range(0, h)) for (x of range(0, w)) {x: x, y: y});
 
     __exports__.matrix = matrix;

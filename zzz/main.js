@@ -1,23 +1,4 @@
-(function () {
-
-	function main (el) {
-
-		renderer.setDom(el);
-		renderer.init();
-
-		var frame = 0;
-
-		(function run () {
-			renderer.update(null, frame++);
-			requestAnimationFrame(run);
-		}());
-	}
-
-	window.main = main;
-
-}());
-
-/* global shader, r
+/* global shader, r */
 import { renderer as r } from "renderer";
 module shader from "shader";
 
@@ -35,4 +16,3 @@ export let main = (el) => {
 	}());
 
 };
-*/

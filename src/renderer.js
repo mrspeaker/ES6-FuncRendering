@@ -1,56 +1,47 @@
-import { matrix } from "grid";
+(function () {
 
-export let renderer = {
+	var renderer = {
 
-	el: null,
+		el: null,
 
-	set dom (el) {
-		this.el = el;
-	},
+		setDom: function (el) {
+			this.el = el;
+		},
 
-	init () {
-		let {el} = this;
-		this.ctx = el.getContext("2d");
-		this.w = el.width;
-		this.h = el.height;
-		this.imgData = this.ctx.createImageData(this.w, this.h);
+		init: function () {
+			this.ctx = this.el.getContext("2d");
+			this.w = this.el.width;
+			this.h = this.el.height;
+			this.imgData = this.ctx.createImageData(this.w, this.h);
+		},
 
-		//let add = (c1, c2) => [a + b for (a of c1) for (b of c2)];
-	},
+		putPixel: function (col, x, y) {
+			var idx = (y * this.w + x) * 4,
+				img = this.imgData.data;
 
-	putPixel ([r, g, b], x = 0, y = 0) {
-		let {w, imgData} = this,
-			idx = (y * w + x) * 4,
-			img = imgData.data;
+			img[idx] = col[0];
+			img[idx + 1] = col[1]
+			img[idx + 2] = col[2];
+			img[idx + 3] = 255;
+		},
 
-		img[idx] = r;
-		img[idx + 1] = g;
-		img[idx + 2] = b;
-		img[idx + 3] = 255;
-	},
+		update: function (shader, time) {
+			var w = this.w,
+				h = this.h,
+				x,
+				y;
 
-	update (shader, time) {
-		this.putPixel([0, 0, 0], 0, 0);
-		let {w, h} = this,
-			clamp = (v) => Math.min(1, Math.max(0, v)),
-			scale = (v) => v * 255;
+			for (y = 0; y < h; y++) {
+				for (x = 0; x < w; x++) {
+					this.putPixel([0, 0, 0], x, y);
+				}
+			}
 
-		for (let {x, y} of matrix(w, h)) {
-			let pix = shader({
-					x,
-					y,
-					xr: x / w,
-					yr: y / h,
-					t: time
-				})
-				.map(clamp)
-				.map(scale);
+			this.ctx.putImageData(this.imgData, 0, 0);
 
-			this.putPixel(pix, x, y);
 		}
+	};
 
-		this.ctx.putImageData(this.imgData, 0, 0);
+	window.renderer = renderer;
 
-	}
-
-}
+}());

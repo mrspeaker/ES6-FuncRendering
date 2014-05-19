@@ -1,14 +1,4 @@
-/*let sindot = ({xr, yr, t}) => {
 
-	let s = (Math.sin(t / 100) + xr * yr);
-
-	return [s, s, s];
-}
-
-export { dot };
-*/
-
-/*
 let glsl = ({xr, yr, t}) => {
 	let {sin, cos} = Math,
 		s = 0;
@@ -31,4 +21,12 @@ let circle = ({xr, yr, t}) => {
 
 	return [s, s, s * 0.2];
 }
-*/
+
+let sindot = ({xr, yr, t}) => {
+
+	let s = (Math.sin(t / 100) + xr * yr);
+
+	return [s, s, s];
+}
+
+export { glsl, circle, sindot };

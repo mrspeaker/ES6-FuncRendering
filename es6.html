@@ -8,12 +8,13 @@
 <body>
 	<canvas id="board" width="64" height="64"></canvas>
 
-	<script src="es5/shader.js"></script>
-	<script src="es5/grid.js"></script>
-	<script src="es5/renderer.js"></script>
-	<script src="es5/main.js"></script>
+	<script data-main="script/main.js" src="vendor/require.js"></script>
 	<script>
-		main(document.querySelector("#board"));
+		requirejs(["main"], function (o) {
+
+			o.main(document.querySelector("#board"));
+
+		});
 	</script>
 </body>
 </html>
