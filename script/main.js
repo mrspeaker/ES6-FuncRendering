@@ -1,4 +1,4 @@
-(function (renderer) {
+(function (renderer, col) {
 
 	function main (el) {
 
@@ -8,14 +8,14 @@
 		var frame = 0;
 
 		(function run () {
-			renderer.update(null, frame++);
+			renderer.update(col, frame++);
 			requestAnimationFrame(run);
 		}());
 	}
 
 	window.main = main;
 
-}(window.renderer));
+}(window.renderer, window.col));
 
 /* global shader, r
 import { renderer as r } from "renderer";

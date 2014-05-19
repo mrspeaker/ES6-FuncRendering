@@ -29,11 +29,27 @@
 			var w = this.w,
 				h = this.h,
 				x,
-				y;
+				y,
+				clamp = function (v) {
+					return Math.min(1, Math.max(0, v));
+				},
+				scale = function (v) {
+					return v * 255
+				};
 
 			for (y = 0; y < h; y++) {
 				for (x = 0; x < w; x++) {
-					this.putPixel([255, x * 5, y * 5], x, y);
+					var pix = shader({
+						x: x,
+						y: y,
+						xr: x / w,
+						yr: y / h,
+						t: time
+					})
+					.map(clamp)
+					.map(scale);
+
+					this.putPixel(pix, x, y);
 				}
 			}
 

@@ -1,12 +1,9 @@
-/*let sindot = ({xr, yr, t}) => {
-
-	let s = (Math.sin(t / 100) + xr * yr);
+function col(pos) {
+	var s = 0; //Math.sin(pos.xr * pos.yr * pos.t);
 
 	return [s, s, s];
 }
 
-export { dot };
-*/
 
 /*
 let glsl = ({xr, yr, t}) => {
@@ -31,4 +28,13 @@ let circle = ({xr, yr, t}) => {
 
 	return [s, s, s * 0.2];
 }
+
+let sindot = ({xr, yr, t}) => {
+
+	let s = (Math.sin(t / 100) + xr * yr);
+
+	return [s, s, s];
+}
+
+export { sindot, glsl, circle };
 */
