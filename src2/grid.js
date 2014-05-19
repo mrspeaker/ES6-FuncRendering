@@ -6,6 +6,7 @@ function matrix(w, h) {
 
 }
 
+export { matrix };
 
 /*
 function* range(from, to) {
@@ -25,5 +26,4 @@ function* matrix(w, h) {
 }
 //let matrix = (w, h) => (for (y of range(0, h)) for (x of range(0, w)) {x: x, y: y});
 
-export { matrix };
 */
