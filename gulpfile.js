@@ -20,10 +20,12 @@ gulp.task("es62es5", function () {
 			}
 		}))
 		.on("error", gutil.log)
+		/*
 		.pipe(es6modules({
 			type: "amd"
 		}))
 		.on("error", gutil.log)
+		*/
 		.pipe(gulp.dest("script"));
 });
 

@@ -33,7 +33,7 @@
 
 			for (y = 0; y < h; y++) {
 				for (x = 0; x < w; x++) {
-					this.putPixel([0, 0, 0], x, y);
+					this.putPixel([255, x * 5, y * 5], x, y);
 				}
 			}
 

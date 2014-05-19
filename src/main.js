@@ -1,4 +1,4 @@
-(function () {
+(function (renderer) {
 
 	function main (el) {
 
@@ -15,7 +15,7 @@
 
 	window.main = main;
 
-}());
+}(window.renderer));
 
 /* global shader, r
 import { renderer as r } from "renderer";

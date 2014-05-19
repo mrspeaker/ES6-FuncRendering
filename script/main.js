@@ -1,24 +1,38 @@
-define("main",
-  ["renderer","shader","exports"],
-  function(__dependency1__, __dependency2__, __exports__) {
-    "use strict";
-    /* global shader, r */
-    var r = __dependency1__.renderer;
-    var shader = __dependency2__;
+(function (renderer) {
 
-    var curShader = shader.glsl;
+	function main (el) {
 
-    var main = function(el)  {
+		renderer.setDom(el);
+		renderer.init();
 
-    	r.dom = el;
-    	r.init();
+		var frame = 0;
 
-    	var frame = 0;
-    	(function run () {
-    		r.update(curShader, frame++);
-    		requestAnimationFrame(run);
-    	}());
+		(function run () {
+			renderer.update(null, frame++);
+			requestAnimationFrame(run);
+		}());
+	}
 
-    };
-    __exports__.main = main;
-  });
+	window.main = main;
+
+}(window.renderer));
+
+/* global shader, r
+import { renderer as r } from "renderer";
+module shader from "shader";
+
+const curShader = shader.glsl;
+
+export let main = (el) => {
+
+	r.dom = el;
+	r.init();
+
+	let frame = 0;
+	(function run () {
+		r.update(curShader, frame++);
+		requestAnimationFrame(run);
+	}());
+
+};
+*/
