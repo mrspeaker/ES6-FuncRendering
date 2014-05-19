@@ -1,3 +1,5 @@
+/* global shader, r */
+
 (function (renderer, col) {
 
 	function main (el) {
@@ -17,7 +19,7 @@
 
 }(window.renderer, window.col));
 
-/* global shader, r
+/*
 import { renderer as r } from "renderer";
 module shader from "shader";
 
