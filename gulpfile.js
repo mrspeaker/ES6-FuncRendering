@@ -13,7 +13,7 @@ gulp.task("default", function () {
 });
 
 var src = "";
-if (stage == 1) {
+if (stage === 1) {
 	src = "src/**/*.js";
 
 	gulp.task("es62es5", function () {
@@ -30,7 +30,7 @@ if (stage == 1) {
 	});
 }
 else {
-	src = "src2/**/*.js";
+	src = stage === 3 ? "srcEnd/**/*.js" : "src2/**/*.js";
 
 	gulp.task("es62es5", function () {
 		gulp.src(src)
