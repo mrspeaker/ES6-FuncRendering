@@ -1,5 +1,5 @@
 function col(pos) {
-	var s = 0; //Math.sin(pos.xr * pos.yr * pos.t);
+	var s = 0;
 
 	return [s, s, s];
 }
