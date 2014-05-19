@@ -1,3 +1,8 @@
+let col = ({xr, yr}) => {
+	let s = xr * yr;
+
+	return [s, s, s];
+}
 
 let glsl = ({xr, yr, t}) => {
 	let {sin, cos} = Math,
@@ -29,4 +34,4 @@ let sindot = ({xr, yr, t}) => {
 	return [s, s, s];
 }
 
-export { glsl, circle, sindot };
+export { col, glsl, circle, sindot };

@@ -1,5 +1,5 @@
 let col = (pos) => {
-	var s = pos.xr * pos.yr;
+	let s = pos.xr * pos.yr;
 
 	return [s, s, s];
 }
