@@ -26,8 +26,6 @@ export let renderer = {
 	update: function (shader, time) {
 		var w = this.w,
 			h = this.h,
-			x,
-			y,
 			clamp = function (v) {
 				return Math.min(1, Math.max(0, v));
 			},
@@ -35,8 +33,8 @@ export let renderer = {
 				return v * 255
 			};
 
-		for (y = 0; y < h; y++) {
-			for (x = 0; x < w; x++) {
+		for (let y = 0; y < h; y++) {
+			for (let x = 0; x < w; x++) {
 				var pix = shader({
 					x: x,
 					y: y,
