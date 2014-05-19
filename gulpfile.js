@@ -10,8 +10,11 @@ gulp.task("default", function () {
 	gulp.start("es62es5");
 });
 
+var src = "src/**/*.js";
+var src2 = "src/**/*.js";
+
 gulp.task("es62es5", function () {
-	gulp.src("src/**/*.js")
+	gulp.src(src)
 		.pipe(es6transpiler({
 			"devel": true,
 			"globals": {
@@ -20,16 +23,34 @@ gulp.task("es62es5", function () {
 			}
 		}))
 		.on("error", gutil.log)
-		/*
-		.pipe(es6modules({
-			type: "amd"
-		}))
-		.on("error", gutil.log)
-		*/
 		.pipe(gulp.dest("script"));
 });
 
 gulp.task("watch", function() {
 	gulp.start("default");
-	gulp.watch("src/**/*.js", ["es62es5"]);
+	gulp.watch(src, ["es62es5"]);
 });
+
+/*
+gulp.task("es62es5", function () {
+	gulp.src(src2)
+		.pipe(es6transpiler({
+			"devel": true,
+			"globals": {
+				requestAnimationFrame: true,
+				frame: true
+			}
+		}))
+		.on("error", gutil.log)
+		.pipe(es6modules({
+			type: "amd"
+		}))
+		.on("error", gutil.log)
+		.pipe(gulp.dest("script"));
+});
+
+gulp.task("watch", function() {
+	gulp.start("default");
+	gulp.watch(src2, ["es62es5"]);
+});
+*/
