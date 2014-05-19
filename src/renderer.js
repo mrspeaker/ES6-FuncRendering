@@ -35,8 +35,8 @@
 					return v * 255
 				};
 
-			for (let y = 0; y < h; y++) {
-				for (let x = 0; x < w; x++) {
+			for (var y = 0; y < h; y++) {
+				for (var x = 0; x < w; x++) {
 					var pix = shader({
 						x: x,
 						y: y,
