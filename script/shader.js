@@ -1,5 +1,5 @@
 var col = function(pos) {
-	var s = pos.xr;
+	var s = 0;
 
 	return [s, s, s];
 }
